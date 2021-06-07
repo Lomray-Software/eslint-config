@@ -22,12 +22,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Use Node.js
+#        if: steps.check.outputs.changed == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: 14.16
-        if: steps.check.outputs.changed == 'true'
 
       - name: Create Release
+#        if: steps.check.outputs.changed == 'true'
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -37,9 +38,8 @@ jobs:
           release_name: v${{ steps.check.outputs.version }}
           draft: false
           prerelease: false
-        if: steps.check.outputs.changed == 'true'
 
       - run: npm publish
+#        if: steps.check.outputs.changed == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: steps.check.outputs.changed == 'true'
