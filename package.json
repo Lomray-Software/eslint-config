@@ -1,0 +1,41 @@
+{
+    "name": "@lomray/eslint-config",
+    "version": "1.0.0",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
+    "description": "This package provides Lomray .eslintrc as an extensible shared config.",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Lomray-Software/eslint-config"
+    },
+    "keywords": [
+        "eslint",
+        "eslintconfig",
+        "config",
+        "lomray",
+        "javascript",
+        "styleguide",
+        "es2015",
+        "es2016",
+        "es2017",
+        "es2018"
+    ],
+    "author": "Mikhail Yarmaliuk",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Lomray-Software/eslint-config/issues"
+    },
+    "homepage": "https://github.com/Lomray-Software/eslint-config",
+    "dependencies": {
+        "eslint-import-resolver-typescript": "^2.4.0",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-lodash": "^7.2.0",
+        "eslint-plugin-sonarjs": "^0.8.0-125",
+        "eslint-plugin-unicorn": "^33.0.1"
+    },
+    "peerDependencies": {
+        "eslint": "^6.8.0 || ^7.2.0"
+    }
+}
