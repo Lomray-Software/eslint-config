@@ -22,25 +22,25 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Use Node.js
-#        if: steps.check.outputs.changed == 'true'
+        if: steps.check.outputs.changed == 'true'
         uses: actions/setup-node@v1
         with:
           node-version: 14.16
           registry-url: https://registry.npmjs.org/
 
       - name: Create Release
-#        if: steps.check.outputs.changed == 'true'
+        if: steps.check.outputs.changed == 'true'
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: 1.0.1
-          release_name: v1.0.1
+          tag_name: ${{ steps.check.outputs.version }}
+          release_name: v${{ steps.check.outputs.version }}
           draft: false
           prerelease: false
 
       - run: npm publish --access=public
-#        if: steps.check.outputs.changed == 'true'
+        if: steps.check.outputs.changed == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
