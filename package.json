@@ -1,9 +1,6 @@
 {
     "name": "@lomray/eslint-config",
     "version": "1.0.0",
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/"
-    },
     "description": "This package provides Lomray .eslintrc as an extensible shared config.",
     "main": "index.js",
     "repository": {
