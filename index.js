@@ -30,7 +30,7 @@ module.exports = {
 			{
 				selector: 'variable',
 				types: ['boolean'],
-				format: ['PascalCase'],
+				format: ['PascalCase', 'UPPER_CASE'],
 				prefix: ['is', 'should', 'has', 'can', 'did', 'will']
 			},
 			{
@@ -90,7 +90,7 @@ module.exports = {
 			groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
 			pathGroups: [
 				{
-					pattern: './**/styles',
+					pattern: './**/styles*',
 					group: 'object'
 				},
 				{
