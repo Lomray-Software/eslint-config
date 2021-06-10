@@ -30,8 +30,8 @@ module.exports = {
 			{
 				selector: 'variable',
 				types: ['boolean'],
-				format: ['PascalCase', 'UPPER_CASE'],
-				prefix: ['is', 'should', 'has', 'can', 'did', 'will']
+				format: ['PascalCase'],
+				prefix: ['is', 'IS_', 'should', 'has', 'can', 'did', 'will'],
 			},
 			{
 				selector: 'interface',
@@ -165,5 +165,8 @@ module.exports = {
 				alwaysTryTypes: true,
 			}
 		},
+		react: {
+			version: 'detect',
+		}
 	},
 };
