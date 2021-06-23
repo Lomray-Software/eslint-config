@@ -1,6 +1,6 @@
 {
     "name": "@lomray/eslint-config",
-    "version": "1.0.4",
+    "version": "1.1.0",
     "description": "This package provides Lomray .eslintrc as an extensible shared config.",
     "main": "index.js",
     "repository": {
@@ -29,6 +29,7 @@
         "@typescript-eslint/eslint-plugin": "^4.26.0",
         "@typescript-eslint/parser": "^4.26.0",
         "eslint-import-resolver-typescript": "^2.4.0",
+        "eslint-plugin-folders": "^1.0.3",
         "eslint-plugin-import": "^2.23.4",
         "eslint-plugin-lodash": "^7.2.0",
         "eslint-plugin-sonarjs": "^0.8.0-125",

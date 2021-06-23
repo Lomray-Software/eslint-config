@@ -5,7 +5,7 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended-requiring-type-checking',
 	],
 	parser: '@typescript-eslint/parser',
-	plugins: ['@typescript-eslint', 'import', 'lodash', 'sonarjs', 'unicorn'],
+	plugins: ['@typescript-eslint', 'import', 'lodash', 'sonarjs', 'unicorn', 'folders'],
 	rules: {
 		'no-shadow': 'off',
 		'no-void': 'off',
@@ -155,6 +155,7 @@ module.exports = {
 		'unicorn/prefer-set-has': ['error'],
 		'unicorn/prefer-string-starts-ends-with': ['error'],
 		'unicorn/throw-new-error': ['error'],
+		'folders/match-regex': [2, '^[a-z-]+$', '/src/'],
 	},
 	settings: {
 		'import/parsers': {
