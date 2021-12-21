@@ -16,6 +16,10 @@ module.exports = {
 		'@typescript-eslint/no-unsafe-member-access': 'off',
 		'@typescript-eslint/no-unsafe-call': 'off',
 		'no-undef': 'warn',
+		'@typescript-eslint/no-unused-vars': [
+			'warn',
+			{ varsIgnorePattern: '^[_]+$' }
+		],
 		'@typescript-eslint/no-empty-interface': [
 			'error',
 			{
