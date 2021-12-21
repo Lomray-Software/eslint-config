@@ -10,6 +10,7 @@ module.exports = {
 		'no-shadow': 'off',
 		'no-void': 'off',
 		'linebreak-style': 'off',
+		'@typescript-eslint/ban-ts-comment': 'off',
 		'@typescript-eslint/ban-ts-ignore': 'off',
 		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/no-unsafe-assignment': 'off',
