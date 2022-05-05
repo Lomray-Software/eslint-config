@@ -30,6 +30,7 @@ module.exports = {
 		'@typescript-eslint/array-type': ['error'],
 		'@typescript-eslint/default-param-last': ['error'],
 		'@typescript-eslint/no-shadow': ['error'],
+		'@typescript-eslint/consistent-type-imports': ['error'],
 		'@typescript-eslint/naming-convention': [
 			'error',
 			{
