@@ -1,6 +1,6 @@
 {
     "name": "@lomray/eslint-config",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "This package provides Lomray .eslintrc as an extensible shared config.",
     "main": "index.js",
     "repository": {
