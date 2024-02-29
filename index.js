@@ -1,11 +1,11 @@
-import base from './configs/base';
-import typescriptEslint from './configs/typescript-eslint';
-import folders from './configs/folders';
-import pluginImport from './configs/import';
-import unicorn from './configs/unicorn';
-import sonarjs from './configs/sonarjs';
-import lodash from './configs/lodash';
 import pluginPrettier from 'eslint-plugin-prettier/recommended';
+import base from './configs/base.js';
+import typescriptEslint from './configs/typescript-eslint.js';
+import folders from './configs/folders.js';
+import pluginImport from './configs/import.js';
+import unicorn from './configs/unicorn.js';
+import sonarjs from './configs/sonarjs.js';
+import lodash from './configs/lodash.js';
 
 export default {
 	recommended: [
