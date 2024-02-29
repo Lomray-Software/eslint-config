@@ -1,6 +1,6 @@
 # eslint-config
 
-This package provides Lomray base JS (Typescript) .eslintrc as an extensible shared config.
+This package provides Lomray eslint config as an extensible shared config.
 
 ## Usage
 
@@ -10,4 +10,11 @@ This package provides Lomray base JS (Typescript) .eslintrc as an extensible sha
   npm i --save-dev @lomray/eslint-config
   ```
 
-2. Add `extends: ["@lomray/eslint-config"]` to your .eslintrc.
+2. Add config to your `eslint.config.js`
+```js
+import config from '@lomray/eslint-config';
+
+export default [
+    ...config.recommended,  
+];
+```
