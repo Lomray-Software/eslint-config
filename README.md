@@ -12,9 +12,13 @@ This package provides Lomray eslint config as an extensible shared config.
 
 2. Add config to your `eslint.config.js`
 ```js
-import config from '@lomray/eslint-config';
+import lomrayConfig from '@lomray/eslint-config';
 
 export default [
-    ...config.recommended,  
+    ...lomrayConfig.recommended, // without files and ignores
+    // or
+    ...lomrayConfig.config(), // with predefined files and ignores
+    // or
+    ...lomrayConfig.config({ here: 'your config to exend' }),
 ];
 ```

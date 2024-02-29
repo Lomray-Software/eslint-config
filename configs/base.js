@@ -1,12 +1,8 @@
 export default {
-    files: ['src/**/*.{ts,tsx,*.ts,*tsx}'],
-    ignores: ['node_modules/**/*', 'build/**/*'],
     linterOptions: {
         reportUnusedDisableDirectives: 'error',
     },
     rules: {
-        'unicorn/import-index': 'off',
-        '@typescript-eslint/ban-ts-comment': 'off',
         'no-await-in-loop': 'off',
         'prettier/prettier': [
             'error',

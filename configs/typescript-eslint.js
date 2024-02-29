@@ -18,7 +18,6 @@ export default {
         'require-await': 'off',
 
         '@typescript-eslint/await-thenable': 'error',
-        '@typescript-eslint/ban-ts-comment': 'error',
         '@typescript-eslint/no-base-to-string': 'error',
         '@typescript-eslint/no-duplicate-type-constituents': 'error',
         '@typescript-eslint/no-explicit-any': 'error',

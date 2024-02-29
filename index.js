@@ -7,15 +7,25 @@ import unicorn from './configs/unicorn.js';
 import sonarjs from './configs/sonarjs.js';
 import lodash from './configs/lodash.js';
 
+const filesIgnores = {
+	files: ['src/**/*.{ts,tsx,*.ts,*tsx}'],
+	ignores: ['node_modules/**/*', 'build/**/*'],
+};
+
+const recommended = [
+	base,
+	typescriptEslint,
+	folders,
+	pluginImport,
+	unicorn,
+	sonarjs,
+	lodash,
+	pluginPrettier,
+]
+
 export default {
-	recommended: [
-		base,
-		typescriptEslint,
-		folders,
-		pluginImport,
-		unicorn,
-		sonarjs,
-		lodash,
-		pluginPrettier,
-	],
+	filesIgnores,
+	recommended,
+	config: (extendConfig = filesIgnores) =>
+		recommended.map((original) => ({ ...original, ...extendConfig })),
 };
