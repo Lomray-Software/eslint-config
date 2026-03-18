@@ -1,8 +1,75 @@
 import pluginSonarjs from 'eslint-plugin-sonarjs';
 
+const sonarjs = pluginSonarjs.default ?? pluginSonarjs;
+const baseRules = sonarjs.rules ?? {};
+
+const isTerminatingStatement = (statement) => {
+    if (!statement) {
+        return false;
+    }
+
+    switch (statement.type) {
+        case 'BreakStatement':
+        case 'ReturnStatement':
+        case 'ThrowStatement':
+            return true;
+
+        case 'BlockStatement':
+            return statement.body.length > 0 && isTerminatingStatement(statement.body[0]);
+
+        case 'IfStatement':
+            return (
+                isTerminatingStatement(statement.consequent) &&
+                isTerminatingStatement(statement.alternate)
+            );
+
+        default:
+            return false;
+    }
+};
+
+const noOneIterationLoop = {
+    meta: {
+        type: 'suggestion',
+        docs: {
+            description: 'Disallow loops that can execute only one iteration.',
+        },
+        schema: [],
+    },
+    create(context) {
+        const checkLoop = (node) => {
+            const body = node.body?.type === 'BlockStatement' ? node.body.body : [node.body];
+            const [firstStatement] = body;
+
+            if (!isTerminatingStatement(firstStatement)) {
+                return;
+            }
+
+            context.report({
+                node,
+                message: 'Refactor this loop to avoid executing only one iteration.',
+            });
+        };
+
+        return {
+            ForStatement: checkLoop,
+            ForInStatement: checkLoop,
+            ForOfStatement: checkLoop,
+            WhileStatement: checkLoop,
+            DoWhileStatement: checkLoop,
+        };
+    },
+};
+
 export default {
     plugins: {
-        sonarjs: pluginSonarjs,
+        sonarjs: {
+            ...sonarjs,
+            rules: {
+                ...baseRules,
+                'no-one-iteration-loop': baseRules['no-one-iteration-loop'] ?? noOneIterationLoop,
+            },
+        },
     },
     rules: {
         'sonarjs/no-extra-arguments': ['error'],
