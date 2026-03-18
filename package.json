@@ -1,6 +1,6 @@
 {
     "name": "@lomray/eslint-config",
-    "version": "5.0.3",
+    "version": "6.0.0",
     "description": "This package provides Lomray eslint config as an extensible shared config.",
     "main": "index.js",
     "type": "module",
@@ -24,15 +24,15 @@
     },
     "homepage": "https://github.com/Lomray-Software/eslint-config",
     "dependencies": {
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-import-resolver-typescript": "^3.6.1",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-import-resolver-typescript": "^4.4.4",
         "eslint-plugin-folders": "^1.0.4",
-        "eslint-plugin-import": "^2.29.1",
-        "eslint-plugin-lodash": "^7.4.0",
-        "eslint-plugin-prettier": "^5.1.3",
-        "eslint-plugin-sonarjs": "^0.24.0",
-        "eslint-plugin-unicorn": "^51.0.1",
-        "typescript-eslint": "^7.1.0"
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-lodash": "^8.0.0",
+        "eslint-plugin-prettier": "^5.5.5",
+        "eslint-plugin-sonarjs": "^4.0.2",
+        "eslint-plugin-unicorn": "^63.0.0",
+        "typescript-eslint": "^8.57.1"
     },
     "peerDependencies": {
         "eslint": ">=8.57.0"

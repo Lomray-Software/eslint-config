@@ -37,6 +37,7 @@ export default {
                 ],
             },
         ],
+        'import/extensions': ['error'],
         'import/no-unresolved': ['error'],
         'import/default': ['error'],
         'import/namespace': ['error', { allowComputed: true }],
