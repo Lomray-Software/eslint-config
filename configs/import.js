@@ -1,8 +1,8 @@
-import pluginImport from 'eslint-plugin-import';
+import pluginImport from 'eslint-plugin-import-x';
 
 export default {
     plugins: {
-        import: pluginImport,
+        'import-x': pluginImport,
     },
     languageOptions: {
         parserOptions: {
@@ -11,16 +11,16 @@ export default {
         },
     },
     settings: {
-        'import/parsers': {
+        'import-x/parsers': {
             espree: ['.js', '.cjs', '.mjs', '.jsx'],
         },
-        'import/resolver': {
+        'import-x/resolver': {
             typescript: true,
             node: true,
         },
     },
     rules: {
-        'import/order': [
+        'import-x/order': [
             'error',
             {
                 alphabetize: { order: 'asc' },
@@ -37,18 +37,18 @@ export default {
                 ],
             },
         ],
-        'import/extensions': ['error'],
-        'import/no-unresolved': ['error'],
-        'import/default': ['error'],
-        'import/namespace': ['error', { allowComputed: true }],
-        'import/no-self-import': ['error'],
-        'import/no-useless-path-segments': ['error'],
-        'import/export': ['error'],
-        'import/no-duplicates': ['error', { considerQueryString: true }],
-        'import/newline-after-import': ['error'],
-        'import/prefer-default-export': ['error'],
-        'import/no-named-default': ['error'],
-        'import/no-named-as-default': 'warn',
-        'import/no-named-as-default-member': 'warn',
+        'import-x/extensions': ['error'],
+        'import-x/no-unresolved': ['error'],
+        'import-x/default': ['error'],
+        'import-x/namespace': ['error', { allowComputed: true }],
+        'import-x/no-self-import': ['error'],
+        'import-x/no-useless-path-segments': ['error'],
+        'import-x/export': ['error'],
+        'import-x/no-duplicates': ['error', { considerQueryString: true }],
+        'import-x/newline-after-import': ['error'],
+        'import-x/prefer-default-export': ['error'],
+        'import-x/no-named-default': ['error'],
+        'import-x/no-named-as-default': 'warn',
+        'import-x/no-named-as-default-member': 'warn',
     },
 };

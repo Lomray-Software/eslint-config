@@ -1,24 +1,61 @@
-# eslint-config
+# @lomray/eslint-config
 
-This package provides Lomray eslint config as an extensible shared config.
+Lomray's shared ESLint configuration for TypeScript projects.
 
-## Usage
+## Install
 
-1. Install package:
+Requires Node `^22.13.0 || >=24`, ESLint 10.4+, TypeScript 4.8.4–6.0 and Prettier 3.
 
-  ```sh
-  npm i --save-dev @lomray/eslint-config
-  ```
-
-2. Add config to your `eslint.config.js`
-```js
-import lomrayConfig from '@lomray/eslint-config';
-
-export default [
-    ...lomrayConfig.recommended, // without files and ignores
-    // or
-    ...lomrayConfig.config(), // with predefined files and ignores
-    // or
-    ...lomrayConfig.config({ here: 'your config to exend' }),
-];
+```sh
+npm install --save-dev @lomray/eslint-config eslint@^10.4 typescript@~6.0 prettier@^3
 ```
+
+Create `eslint.config.js` in a project with a `tsconfig.json`:
+
+```js
+import lomray from '@lomray/eslint-config';
+
+export default lomray.config();
+```
+
+The default scope is `src/**/*.{ts,tsx,mts,cts}`. Type-aware rules use the nearest `tsconfig.json`.
+Your files must be included in that project. Set `languageOptions.parserOptions.tsconfigRootDir`
+when the config runs from a different working directory.
+
+## Customize
+
+```js
+import lomray from '@lomray/eslint-config';
+
+export default lomray.config({
+    files: ['src/**/*.ts', 'tests/**/*.ts'],
+    ignores: ['src/generated/**'],
+    rules: {
+        'import-x/prefer-default-export': 'off',
+    },
+});
+```
+
+Overrides are merged after the presets, preserving their other rules and parser settings.
+For full control, spread `lomray.recommended` into your own flat config; it has no file scope.
+Use a standalone `{ ignores: ['build/**'] }` entry to ignore files globally.
+
+## Migrate from v6
+
+- Use ESLint 10.4+ and the Node versions listed above.
+- Rename `import/*` rules and `import/*` resolver settings to `import-x/*`.
+  The TypeScript resolver and import ordering remain configured.
+- `config({ rules, languageOptions, settings })` now merges overrides instead of replacing
+  those sections in every preset.
+- `.mts` and `.cts` sources are included by default.
+
+## Develop
+
+```sh
+npm ci
+npm test
+npm run test:packed
+npm audit
+```
+
+The release workflow runs these checks before publishing a changed package version.

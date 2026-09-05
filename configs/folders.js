@@ -33,7 +33,7 @@ const pluginFolders = {
 
                 return {
                     Program(node) {
-                        const filename = context.filename ?? context.getFilename();
+                        const filename = context.filename;
                         const absoluteFilename = path.resolve(filename);
                         const parsed = parseFilename(absoluteFilename);
                         const [, relativePath] = parsed.dir.split(root);
