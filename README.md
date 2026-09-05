@@ -18,7 +18,7 @@ import lomray from '@lomray/eslint-config';
 export default lomray.config();
 ```
 
-The default scope is `src/**/*.{ts,tsx,mts,cts}`. Type-aware rules use the nearest `tsconfig.json`.
+The default scope is `src/**/*.{ts,tsx,mts,cts}`. Type-aware rules use TypeScript’s project service and the nearest `tsconfig.json`.
 Your files must be included in that project. Set `languageOptions.parserOptions.tsconfigRootDir`
 when the config runs from a different working directory.
 
@@ -47,6 +47,8 @@ Use a standalone `{ ignores: ['build/**'] }` entry to ignore files globally.
   The TypeScript resolver and import ordering remain configured.
 - `config({ rules, languageOptions, settings })` now merges overrides instead of replacing
   those sections in every preset.
+- Type checking now uses `parserOptions.projectService`. If you set an explicit `project`,
+  set `projectService: false` in the same override.
 - `.mts` and `.cts` sources are included by default.
 
 ## Develop

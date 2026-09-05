@@ -7,7 +7,7 @@ export default {
     languageOptions: {
         parser: tsEslint.parser,
         parserOptions: {
-            project: true,
+            projectService: true,
         },
     },
     rules: {
